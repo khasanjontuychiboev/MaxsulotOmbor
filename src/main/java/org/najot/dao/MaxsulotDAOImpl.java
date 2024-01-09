@@ -18,7 +18,7 @@ public class MaxsulotDAOImpl implements MaxsulotDAO{
     public Maxsulot selectMaxsulotById(Integer id) {
 
         return (Maxsulot) jdbcTemplate
-                .query("select * from maxsulot where id=?",
+                .queryForObject("select * from maxsulot where id=?",
                         new Object[]{id}, new MaxsulotMapper());
     }
 
